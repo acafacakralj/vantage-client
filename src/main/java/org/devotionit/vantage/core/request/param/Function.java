@@ -1,0 +1,104 @@
+package org.devotionit.vantage.core.request.param;
+
+/**
+ * Represents function parameter for the alpha vantage api.
+ *
+ * @author Strahinja Mitrović
+ */
+public enum Function implements QueryParam {
+  TIME_SERIES_INTRADAY("TIME_SERIES_INTRADAY"),
+  TIME_SERIES_DAILY("TIME_SERIES_DAILY"),
+  TIME_SERIES_DAILY_ADJUSTED("TIME_SERIES_DAILY_ADJUSTED"),
+  TIME_SERIES_WEEKLY("TIME_SERIES_WEEKLY"),
+  TIME_SERIES_WEEKLY_ADJUSTED("TIME_SERIES_WEEKLY_ADJUSTED"),
+  TIME_SERIES_MONTHLY("TIME_SERIES_MONTHLY"),
+  TIME_SERIES_MONTHLY_ADJUSTED("TIME_SERIES_MONTHLY_ADJUSTED"),
+  SYMBOL_SEARCH("SYMBOL_SEARCH"),
+  GLOBAL_QUOTE("GLOBAL_QUOTE"),
+
+  CURRENCY_EXCHANGE_RATE("CURRENCY_EXCHANGE_RATE"),
+  FX_INTRADAY("FX_INTRADAY"),
+  FX_DAILY("FX_DAILY"),
+  FX_WEEKLY("FX_WEEKLY"),
+  FX_MONTLY("FX_MONTHLY"),
+
+  CRYPTO_CURRENCY_DAILY("DIGITAL_CURRENCY_DAILY"),
+  CRYPTO_CURRENCY_WEEKLY("DIGITAL_CURRENCY_WEEKLY"),
+  CRYPTO_CURRENCY_MONTHLY("DIGITAL_CURRENCY_MONTHLY"),
+
+  SMA("SMA"),
+  EMA("EMA"),
+  WMA("WMA"),
+  DEMA("DEMA"),
+  TEMA("TEMA"),
+  TRIMA("TRIMA"),
+  KAMA("KAMA"),
+  T3("T3"),
+  RSI("RSI"),
+
+  MAMA("MAMA"),
+  VWAP("VWAP"),
+
+
+  MACD("MACD"),
+  MACDEXT("MACDEXT"),
+  STOCH("STOCH"),
+  STOCHF("STOCHF"),
+
+  STOCHRSI("STOCHRSI"),
+  WILLR("WILLR"),
+  ADX("ADX"),
+  ADXR("ADXR"),
+  APO("APO"),
+  PPO("PPO"),
+  MOM("MOM"),
+  BOP("BOP"),
+  CCI("CCI"),
+  CMO("CMO"),
+  ROC("ROC"),
+  ROCR("ROCR"),
+  AROON("AROON"),
+  AROONOSC("AROONOSC"),
+  MFI("MFI"),
+  TRIX("TRIX"),
+  ULTOSC("ULTOSC"),
+  DX("DX"),
+  MINUS_DI("MINUS_DI"),
+  PLUS_DI("PLUS_DI"),
+  MINUS_DM("MINUS_DM"),
+  PLUS_DM("PLUS_DM"),
+  BBANDS("BBANDS"),
+  MIDPOINT("MIDPOINT"),
+  MIDPRICE("MIDPRICE"),
+  SAR("SAR"),
+  TRANGE("TRANGE"),
+  ATR("ATR"),
+  NATR("NATR"),
+  AD("AD"),
+  ADOSC("ADOSC"),
+  OBV("OBV"),
+  HT_TRENDLINE("HT_TRENDLINE"),
+  HT_SINE("HT_SINE"),
+  HT_TRENDMODE("HT_TRENDMODE"),
+  HT_DCPERIOD("HT_DCPERIOD"),
+  HT_DCPHASE("HT_DCPHASE"),
+  HT_PHASOR("HT_PHASOR"),
+
+  SECTOR("SECTOR");
+
+  private final String urlParam;
+
+  Function(String urlParam) {
+    this.urlParam = urlParam;
+  }
+
+  @Override
+  public String getName() {
+    return "function";
+  }
+
+  @Override
+  public String getValue() {
+    return urlParam;
+  }
+}
