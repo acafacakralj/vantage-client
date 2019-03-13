@@ -1,6 +1,8 @@
 language: java
 jdk:
-- oraclejdk8
+  - oraclejdk8
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
 env:
   global:
     - CODECOV_TOKEN=5be65b8d-9282-4db4-9839-8b87121d5e9d
