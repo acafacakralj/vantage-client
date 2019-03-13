@@ -4,3 +4,6 @@ jdk:
 env:
   global:
     - CODECOV_TOKEN=5be65b8d-9282-4db4-9839-8b87121d5e9d
+install:
+- mvn -N io.takari:maven:wrapper
+- ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
