@@ -5,8 +5,8 @@ import com.fasterxml.jackson.core.ObjectCodec;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonNode;
 import org.devotionit.vantage.core.AlphaVantageException;
-import org.devotionit.vantage.core.response.data.TimeSeriesData;
 import org.devotionit.vantage.core.response.TimeSeriesResponse;
+import org.devotionit.vantage.core.response.data.TimeSeriesData;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -33,13 +33,14 @@ public class TimeSeriesDeserializer extends ResponseDeserializer<TimeSeriesRespo
     List<TimeSeriesData> timeSeriesData = new ArrayList<>();
     node.fields().forEachRemaining(entry -> {
       JsonNode dataNode = entry.getValue();
+      List<String> fieldNames = getFieldNames(node);
       TimeSeriesData.TimeSeriesDataBuilder builder = TimeSeriesData.builder()
         .date(LocalDateTime.parse(entry.getKey(), DATE_TIME_FORMATTER))
-        .open(dataNode.get("1. open").asDouble())
-        .high(dataNode.get("2. high").asDouble())
-        .low(dataNode.get("3. low").asDouble())
-        .close(dataNode.get("4. close").asDouble())
-        .volume(dataNode.get("5. volume").asLong());
+        .open(dataNode.get(fieldNames.get(0)).asDouble())
+        .high(dataNode.get(fieldNames.get(1)).asDouble())
+        .low(dataNode.get(fieldNames.get(2)).asDouble())
+        .close(dataNode.get(fieldNames.get(3)).asDouble())
+        .volume(dataNode.get(fieldNames.get(4)).asLong());
       timeSeriesData.add(builder.build());
     });
     return timeSeriesData;
