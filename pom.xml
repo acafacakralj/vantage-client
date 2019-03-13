@@ -97,7 +97,7 @@
     <profile>
       <id>sonar</id>
       <activation>
-        <activeByDefault>true</activeByDefault>
+        <activeByDefault>false</activeByDefault>
       </activation>
       <properties>
         <sonar.host.url>
