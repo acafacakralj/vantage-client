@@ -9,8 +9,7 @@ import static org.junit.Assert.assertNotNull;
 public class MarketTest {
   @Test
   public void Should_CreateMarket_When_DataIsValid() {
-    Market market = Market.from("BYC");
-    assertNotNull(market);
+    assertNotNull(Market.from("BYC"));
   }
 
   @Test(expected = NullPointerException.class)

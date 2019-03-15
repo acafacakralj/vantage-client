@@ -9,8 +9,7 @@ import static org.junit.Assert.assertNotNull;
 public class FromSymbolTest {
   @Test
   public void Should_CreateFromSymbol_When_DataIsValid() {
-    FromSymbol fromSymbol = FromSymbol.from("BYC");
-    assertNotNull(fromSymbol);
+    assertNotNull(FromSymbol.from("BYC"));
   }
 
   @Test(expected = NullPointerException.class)

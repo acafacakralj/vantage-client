@@ -1,10 +1,13 @@
 package org.devotionit.vantage.core.request.param;
 
+import lombok.ToString;
+
 /**
  * Represents function parameter for the alpha vantage api.
  *
  * @author Strahinja Mitrović
  */
+@ToString
 public enum Function implements QueryParam {
   TIME_SERIES_INTRADAY("TIME_SERIES_INTRADAY"),
   TIME_SERIES_DAILY("TIME_SERIES_DAILY"),
@@ -17,6 +20,7 @@ public enum Function implements QueryParam {
   GLOBAL_QUOTE("GLOBAL_QUOTE"),
 
   CURRENCY_EXCHANGE_RATE("CURRENCY_EXCHANGE_RATE"),
+
   FX_INTRADAY("FX_INTRADAY"),
   FX_DAILY("FX_DAILY"),
   FX_WEEKLY("FX_WEEKLY"),
@@ -35,6 +39,15 @@ public enum Function implements QueryParam {
   KAMA("KAMA"),
   T3("T3"),
   RSI("RSI"),
+  STOCHRSI("STOCHRSI"),
+  WILLR("WILLR"),
+  ADX("ADX"),
+  ADXR("ADXR"),
+  MOM("MOM"),
+  CMO("CMO"),
+  ROC("ROC"),
+  ROCR("ROCR"),
+  TRIX("TRIX"),
 
   MAMA("MAMA"),
   VWAP("VWAP"),
@@ -45,22 +58,20 @@ public enum Function implements QueryParam {
   STOCH("STOCH"),
   STOCHF("STOCHF"),
 
-  STOCHRSI("STOCHRSI"),
-  WILLR("WILLR"),
-  ADX("ADX"),
-  ADXR("ADXR"),
+
+
   APO("APO"),
   PPO("PPO"),
-  MOM("MOM"),
+
   BOP("BOP"),
   CCI("CCI"),
-  CMO("CMO"),
-  ROC("ROC"),
-  ROCR("ROCR"),
+
+
+
   AROON("AROON"),
   AROONOSC("AROONOSC"),
   MFI("MFI"),
-  TRIX("TRIX"),
+
   ULTOSC("ULTOSC"),
   DX("DX"),
   MINUS_DI("MINUS_DI"),

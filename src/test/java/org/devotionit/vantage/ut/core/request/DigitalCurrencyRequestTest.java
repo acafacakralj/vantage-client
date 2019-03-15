@@ -11,7 +11,6 @@ import static org.junit.Assert.assertNotNull;
 public class DigitalCurrencyRequestTest {
   @Test
   public void Should_CreateRequest_When_DataIsValid() {
-
     DigitalCurrencyRequest request = DigitalCurrencyRequest.builder()
       .function(CRYPTO_CURRENCY_DAILY)
       .market(Market.from("BYC"))

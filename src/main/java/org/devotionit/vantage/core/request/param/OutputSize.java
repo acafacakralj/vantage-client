@@ -1,5 +1,7 @@
 package org.devotionit.vantage.core.request.param;
 
+import lombok.ToString;
+
 import java.util.Arrays;
 import java.util.Map;
 import java.util.function.Function;
@@ -10,6 +12,7 @@ import java.util.stream.Collectors;
  *
  * @author Strahinja Mitrović
  */
+@ToString
 public enum OutputSize implements QueryParam {
   COMPACT("compact"),
   FULL("full");
@@ -22,10 +25,6 @@ public enum OutputSize implements QueryParam {
     this.urlParam = outputSize;
   }
 
-  public static OutputSize fromString(String outputSize) {
-    return OutputSize.OUTPUT_SIZE_MAP.get(outputSize.toLowerCase());
-  }
-
   @Override
   public String getName() {
     return "outputsize";
@@ -34,5 +33,15 @@ public enum OutputSize implements QueryParam {
   @Override
   public String getValue() {
     return urlParam;
+  }
+
+  /**
+   * Method is used for retrieving  {@link OutputSize} enum from provided {@link String}.
+   *
+   * @param outputSize {@link String}
+   * @return {@link Interval}
+   */
+  public static OutputSize fromString(String outputSize) {
+    return OutputSize.OUTPUT_SIZE_MAP.get(outputSize.toLowerCase());
   }
 }

@@ -24,6 +24,6 @@ public enum SeriesType implements QueryParam {
 
   @Override
   public String getValue() {
-    return null;
+    return urlParam;
   }
 }

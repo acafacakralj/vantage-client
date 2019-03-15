@@ -2,6 +2,7 @@ package org.devotionit.vantage.core.http.listener;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
+import org.devotionit.vantage.core.AlphaVantageException;
 import org.devotionit.vantage.core.parser.JsonPaser;
 import org.eclipse.jetty.client.api.Result;
 import org.eclipse.jetty.client.util.BufferingResponseListener;
@@ -36,12 +37,12 @@ public class ResponseListener<T> extends BufferingResponseListener {
       }
       String response = getContentAsString();
       if (response.contains("\"Error Message\"")) {
-        future.completeExceptionally(new Exception(response));
+        future.completeExceptionally(new AlphaVantageException(response));
         return;
       }
       future.complete(mapper.readValue(response, clazz));
     } catch (IOException e) {
-      log.error("Failed to retrieved read json value.", e);
+      log.error("Failed to parse json.", e);
     }
   }
 }

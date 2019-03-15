@@ -48,6 +48,7 @@ public class JsonPaser {
     module.addDeserializer(DigitalCurrencyResponse.class, new DigitalCurrencyDeserializer());
     module.addDeserializer(QuoteResponse.class, new QuoteDeserializer());
     module.addDeserializer(SearchResponse.class, new SearchDeserializer());
+    module.addDeserializer(IndicatorResponse.class, new IndicatorDeserializer());
     mapper = new ObjectMapper();
     mapper.registerModule(module);
     mapper.configure(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT, true);

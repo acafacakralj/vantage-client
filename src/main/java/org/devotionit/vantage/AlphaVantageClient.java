@@ -22,11 +22,12 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
 
+import static java.util.Objects.isNull;
 import static java.util.Objects.requireNonNull;
 import static org.devotionit.vantage.core.http.HttpConfig.VANTAGE_API_URL;
 
 /**
- * Represents alpha vantage http client.
+ * Represents alpha vantage client.
  *
  * @author Strahinja Mitrović
  */
@@ -38,6 +39,11 @@ public class AlphaVantageClient {
   private ObjectMapper mapper;
   private final String apiKey;
 
+  /**
+   * Creates an AlphaVantageClient.
+   *
+   * @param apiKey - the secret key to access the api.
+   */
   public AlphaVantageClient(String apiKey) {
     this.apiKey = requireNonNull(apiKey, "Alpha Vantage api-key can't be null.");
     this.http = requireNonNull(Http.getHttpClient(), "Http client can't be null.");
@@ -92,7 +98,11 @@ public class AlphaVantageClient {
     try {
       for (Field field : FieldUtils.getAllFields(apiRequest.getClass())) {
         field.setAccessible(true);
-        httpRequest.param(field.getName(), String.valueOf(field.get(apiRequest)));
+        String fieldValue = String.valueOf(field.get(apiRequest));
+        if (isNull(fieldValue)) {
+          continue;
+        }
+        httpRequest.param(field.getName(), fieldValue);
       }
     } catch (IllegalAccessException e) {
       log.error("Failed to set request params.", e);

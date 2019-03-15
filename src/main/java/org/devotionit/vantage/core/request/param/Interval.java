@@ -1,5 +1,7 @@
 package org.devotionit.vantage.core.request.param;
 
+import lombok.ToString;
+
 import java.util.Arrays;
 import java.util.Map;
 import java.util.function.Function;
@@ -10,13 +12,17 @@ import java.util.stream.Collectors;
  *
  * @author Strahinja Mitrović
  */
+@ToString
 public enum Interval implements QueryParam {
   ONE_MIN("1min"),
   FIVE_MIN("5min"),
   TEN_MIN("10min"),
   FIFTEEN_MIN("15min"),
   THIRTY_MIN("30min"),
-  SIXTY_MIN("60min");
+  SIXTY_MIN("60min"),
+  DAILY("daily"),
+  WEEKLY("weekly"),
+  MONTHLY("monthly");
 
   private static final Map<String, Interval> INTERVAL_MAP =
     Arrays.stream(Interval.values()).collect(Collectors.toMap(i -> i.getValue(), Function.identity()));
@@ -26,6 +32,12 @@ public enum Interval implements QueryParam {
     this.urlParam = interval;
   }
 
+  /**
+   * Method is used for retrieving  {@link Interval} enum from provided {@link String}.
+   *
+   * @param interval {@link String}
+   * @return {@link Interval}
+   */
   public static Interval fromString(String interval) {
     return Interval.INTERVAL_MAP.get(interval);
   }

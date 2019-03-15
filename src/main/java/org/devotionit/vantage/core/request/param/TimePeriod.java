@@ -35,6 +35,9 @@ public class TimePeriod implements QueryParam {
    * @return {@link TimePeriod}
    */
   public static TimePeriod from(int timePeriod) {
+    if (timePeriod < 0) {
+      throw new IllegalArgumentException("Only positive integers are accepted.");
+    }
     return new TimePeriod(timePeriod);
   }
 }

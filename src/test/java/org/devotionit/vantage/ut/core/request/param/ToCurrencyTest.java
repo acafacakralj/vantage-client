@@ -9,8 +9,7 @@ import static org.junit.Assert.assertNotNull;
 public class ToCurrencyTest {
   @Test
   public void Should_CreateToCurrency_When_DataIsValid() {
-    ToCurrency toCurrency = ToCurrency.from("USD");
-    assertNotNull(toCurrency);
+    assertNotNull(ToCurrency.from("USD"));
   }
 
   @Test(expected = NullPointerException.class)

@@ -1,11 +1,20 @@
 package org.devotionit.vantage.core.response;
 
-import org.devotionit.vantage.core.request.ApiRequest;
+import lombok.Data;
+import org.devotionit.vantage.core.response.data.IndicatorData;
 
+import java.util.List;
 import java.util.Map;
 
+/**
+ * @author Strahinja Mitrović
+ */
+@Data
 public class IndicatorResponse extends ApiResponse {
-  public IndicatorResponse(Map<String, String> metaData) {
+  private List<IndicatorData> indicatorData;
+
+  public IndicatorResponse(Map<String, String> metaData, List<IndicatorData> indicatorData) {
     super(metaData);
+    this.indicatorData = indicatorData;
   }
 }

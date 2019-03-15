@@ -9,8 +9,7 @@ import static org.junit.Assert.assertNotNull;
 public class KeywordsTest {
   @Test
   public void Should_CreateKeywords_When_DataIsValid() {
-    Keywords keywords = Keywords.from("BYC");
-    assertNotNull(keywords);
+    assertNotNull(Keywords.from("BYC"));
   }
 
   @Test(expected = NullPointerException.class)
