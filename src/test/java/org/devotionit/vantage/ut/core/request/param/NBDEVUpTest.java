@@ -6,7 +6,6 @@ import org.devotionit.vantage.core.request.param.NBDEVUp;
 import org.junit.Test;
 
 public class NBDEVUpTest {
-
 	@Test
 	public void Should_CreateNBDEVUp_When_DataIsValid() {
 		assertNotNull(NBDEVUp.from(1));
