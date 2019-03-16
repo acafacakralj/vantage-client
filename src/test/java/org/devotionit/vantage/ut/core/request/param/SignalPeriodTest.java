@@ -6,7 +6,6 @@ import org.devotionit.vantage.core.request.param.SignalPeriod;
 import org.junit.Test;
 
 public class SignalPeriodTest {
-
 	@Test
 	public void Should_CreateSignalPeriod_When_DataIsValid() {
 		assertNotNull(SignalPeriod.from(1));
