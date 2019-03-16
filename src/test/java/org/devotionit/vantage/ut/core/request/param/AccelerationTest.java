@@ -13,7 +13,7 @@ public class AccelerationTest {
   }
 
   @Test(expected = IllegalArgumentException.class)
-  public void Should_FailToCreateFromCurrency_When_DataLessThenZero() {
+  public void Should_FailToCreateAcceleration_When_DataLessThenZero() {
     Acceleration.from(-1);
   }
 
@@ -27,7 +27,7 @@ public class AccelerationTest {
   @Test
   public void Should_ReturnAccelerationQueryParamValue() {
     float testData = 1;
-    Acceleration acceleration = Acceleration.from(1);
+    Acceleration acceleration = Acceleration.from(testData);
     assertNotNull(acceleration);
     assertEquals(testData, Float.parseFloat(acceleration.getValue()), 0);
   }

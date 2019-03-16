@@ -69,3 +69,4 @@
 # System Files
 **/.DS_Store
 **/Thumbs.db
+/target/
