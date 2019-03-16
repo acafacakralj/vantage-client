@@ -6,7 +6,6 @@ import org.devotionit.vantage.core.request.param.FastLimit;
 import org.junit.Test;
 
 public class FastLimitTest {
-
 	@Test
 	public void Should_CreateFastLimit_When_DataIsValid() {
 		assertNotNull(FastLimit.from(1));
