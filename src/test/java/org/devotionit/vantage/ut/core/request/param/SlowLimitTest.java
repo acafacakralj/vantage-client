@@ -6,7 +6,6 @@ import org.devotionit.vantage.core.request.param.SlowLimit;
 import org.junit.Test;
 
 public class SlowLimitTest {
-
 	@Test
 	public void Should_CreateSlowLimit_When_DataIsValid() {
 		assertNotNull(SlowLimit.from(1));
@@ -31,5 +30,4 @@ public class SlowLimitTest {
 		assertNotNull(slowLimit);
 		assertEquals(testData, Float.parseFloat(slowLimit.getValue()), 0);
 	}
-
 }
