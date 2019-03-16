@@ -8,7 +8,6 @@ import org.devotionit.vantage.core.request.param.SlowMAType;
 import org.junit.Test;
 
 public class SlowMATypeTest {
-
 	@Test
 	public void Should_CreateSlowMAType_When_DataIsValid() {
 		Stream.of(0, 1, 2, 3, 4, 5, 6, 7, 8).forEach(integer -> {
@@ -40,5 +39,4 @@ public class SlowMATypeTest {
 		assertNotNull(slowMAType);
 		assertEquals(testData, Integer.parseInt(slowMAType.getValue()));
 	}
-
 }
