@@ -6,7 +6,6 @@ import org.devotionit.vantage.core.request.param.NBDEVDn;
 import org.junit.Test;
 
 public class NBDEVDnTest {
-
 	@Test
 	public void Should_CreateNBDEVDn_When_DataIsValid() {
 		assertNotNull(NBDEVDn.from(1));
@@ -31,5 +30,4 @@ public class NBDEVDnTest {
 		assertNotNull(dn);
 		assertEquals(testData, Integer.parseInt(dn.getValue()), 0);
 	}
-
 }
