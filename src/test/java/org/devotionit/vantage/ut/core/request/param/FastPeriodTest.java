@@ -6,7 +6,6 @@ import org.devotionit.vantage.core.request.param.FastPeriod;
 import org.junit.Test;
 
 public class FastPeriodTest {
-
 	@Test
 	public void Should_CreateFastPeriod_When_DataIsValid() {
 		assertNotNull(FastPeriod.from(1));
@@ -32,5 +31,4 @@ public class FastPeriodTest {
 		assertNotNull(fastPeriod);
 		assertEquals(1, Integer.parseInt(fastPeriod.getValue()), 0);
 	}
-
 }
