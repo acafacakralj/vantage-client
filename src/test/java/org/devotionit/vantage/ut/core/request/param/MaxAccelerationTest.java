@@ -6,7 +6,6 @@ import org.devotionit.vantage.core.request.param.MaxAcceleration;
 import org.junit.Test;
 
 public class MaxAccelerationTest {
-
 	@Test
 	public void Should_CreateMaxAcceleration_When_DataIsValid() {
 		assertNotNull(MaxAcceleration.from(1));
@@ -31,5 +30,4 @@ public class MaxAccelerationTest {
 		assertNotNull(maxAcceleration);
 		assertEquals(testData, Float.parseFloat(maxAcceleration.getValue()), 0);
 	}
-
 }
