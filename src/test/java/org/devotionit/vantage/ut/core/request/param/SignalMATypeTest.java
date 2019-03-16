@@ -8,7 +8,6 @@ import org.devotionit.vantage.core.request.param.SignalMAType;
 import org.junit.Test;
 
 public class SignalMATypeTest {
-
 	@Test
 	public void Should_CreateSignalMAType_When_DataIsValid() {
 		Stream.of(0, 1, 2, 3, 4, 5, 6, 7, 8).forEach(integer -> {
@@ -39,6 +38,5 @@ public class SignalMATypeTest {
 		SignalMAType signalMAType = SignalMAType.from(1);
 		assertNotNull(signalMAType);
 		assertEquals(testData, Integer.parseInt(signalMAType.getValue()));
-
 	}
 }
