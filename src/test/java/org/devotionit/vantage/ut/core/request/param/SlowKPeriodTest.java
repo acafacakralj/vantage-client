@@ -6,7 +6,6 @@ import org.devotionit.vantage.core.request.param.SlowKPeriod;
 import org.junit.Test;
 
 public class SlowKPeriodTest {
-
 	@Test
 	public void Should_CreateSlowKPeriod_When_DataIsValid() {
 		assertNotNull(SlowKPeriod.from(1));
@@ -31,5 +30,4 @@ public class SlowKPeriodTest {
 		assertNotNull(kPeriod);
 		assertEquals(testData, Integer.parseInt(kPeriod.getValue()), 0);
 	}
-
 }
