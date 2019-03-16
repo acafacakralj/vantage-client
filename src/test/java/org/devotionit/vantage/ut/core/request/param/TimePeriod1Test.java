@@ -6,7 +6,6 @@ import org.devotionit.vantage.core.request.param.TimePeriod1;
 import org.junit.Test;
 
 public class TimePeriod1Test {
-
 	@Test
 	public void Should_CreateTimePeriod1_When_DataIsValid() {
 		assertNotNull(TimePeriod1.from(1));
@@ -31,5 +30,4 @@ public class TimePeriod1Test {
 		assertNotNull(timePeriod);
 		assertEquals(testData, Integer.parseInt(timePeriod.getValue()), 0);
 	}
-
 }
